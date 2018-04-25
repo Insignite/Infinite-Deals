@@ -1,0 +1,44 @@
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+html, body{
+	background: url("../Img/firewatch-game.jpg")  no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+.warningBar{
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+}
+
+form.searchBar input[type=text]{
+	/* Search Icon*/
+	background-color: white;
+	background-image: url("../Img/searchIcon_S_v3.png");
+	background-position: 5px 1px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+	/* Box */
+	width: 400px;
+	height: 30px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+#warningBar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: black;
+}
