@@ -6,7 +6,7 @@
 }
 
 html, body{
-	background: url("../Img/firewatch-game.jpg")  no-repeat center center fixed;
+	background: url("../img/firewatch-game.jpg")  no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -23,7 +23,7 @@ html, body{
 form.searchBar input[type=text]{
 	/* Search Icon*/
 	background-color: white;
-	background-image: url("../Img/searchIcon_S_v3.png");
+	background-image: url("../img/searchIcon_S_v3.png");
 	background-position: 5px 1px;
 	background-repeat: no-repeat;
 	padding-left: 40px;
