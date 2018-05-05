@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import selenium.webdriver as webdriver
 from bs4 import BeautifulSoup
 import csv
@@ -73,7 +73,7 @@ def get_link(search_term):
 
     # Create, open csv file
     with open('products.csv', 'wb') as myfile:
-        # wr = csv.writer(myfile, quoting = csv.QUOTE_ALL)
+        wr = csv.writer(myfile, quoting = csv.QUOTE_ALL)
         # Write the header
         wr.writerow(("Name", "Price", "URL"))
         # List through the tuple and write to file
@@ -84,6 +84,7 @@ def get_link(search_term):
     myfile.close()
     print('Outputing to CSV file...')
 
-def __init__(self):
-    HtmlFormSearch = cgi.FieldStorage()
-    get_link(HtmlFormSearch.getvalue('search'))
+
+HtmlFormSearch = cgi.FieldStorage()
+# Grab info
+get_link(HtmlFormSearch.getvalue('search'))
