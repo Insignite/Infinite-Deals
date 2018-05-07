@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>CSV File to HTML Table Using AJAX jQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+  <div id="headers">
+    <h1>Easter Came Early This Year!</h1>
+    <p>We have your new eggs.</p>
+    <a href="../../client/html/HomePage.html">Didn't find what you were looking for?  Search again.</a>
+  </div>
+  <div class="container">
+   <div class="table-responsive">
+    <div id="product_table">
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+
+<script>
+$(document).ready(function(){
+  $.ajax({
+   url:"../../products.csv",
+   dataType:"text",
+   success:function(data) {
+      // Clean data
+      data = data.trim();
+      data = data.substring(1);
+      data = data.substring(0, data.length-1);
+
+      // Format display table
+      var product_data = data.split(/"\r?\n"|"\r"/);
+
+      if (product_data.length == 1) {
+        window.open('../../client/html/NoResults.html','_self')
+      } else {
+        var table_data = '<table class="table table-bordered table-striped">';
+        for(var count = 0; count<product_data.length; count++) {
+         var cell_data = product_data[count].split('","');
+         table_data += '<tr>';
+         for(var cell_count=0; cell_count<cell_data.length; cell_count++) {
+          if(count === 0) {
+            table_data += '<th>'+cell_data[cell_count]+'</th>';
+          }
+          else {
+            var cell = cell_data[cell_count]
+            if (cell.substring(0,5)=='https')
+              table_data += '<td>'+'<a href="'+cell+'">'+cell+'</a>'+'</td>';
+            else
+              table_data += '<td>'+cell_data[cell_count]+'</td>';
+          }
+         }
+         table_data += '</tr>';
+        }
+        table_data += '</table>';
+        $('#product_table').html(table_data);
+      }
+   }
+  });
+});
+</script>
+
+<style>
+div#headers {
+  text-align: center;
+}
+</style>

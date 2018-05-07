@@ -75,7 +75,7 @@ def get_link(search_term):
     with open('products.csv', 'wb') as myfile:
         wr = csv.writer(myfile, quoting = csv.QUOTE_ALL)
         # Write the header
-        wr.writerow(("Name", "Price", "URL"))
+        wr.writerow(("Product", "Price", "Link"))
         # List through the tuple and write to file
         for info in products_info:
             if(search_term.upper() in info[0].upper()):
