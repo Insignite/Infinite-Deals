@@ -16,7 +16,6 @@ def get_link(search_term):
     print('Adding options to Chrome...')
 
     # Website Links
-    url = "https://www.bestbuy.com/"
     newegg_url = "https://www.newegg.com/?nm_mc=KNC-Askcom&cm_mmc=KNC-Askcom-_-Branding-_-NA-_-NA"
 
     # Selenium Setting chrome driver and access website
