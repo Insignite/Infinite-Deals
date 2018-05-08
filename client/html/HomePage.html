@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		<title> Infinite Deals </title>
+		<link rel="stylesheet" href = "../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/HomeStyle.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="warningBar" style = "color: red">
+				  <strong>Disclaimer:</strong> Website were mean to use as personal project.
+				   All resources are copyright by original owner.
+			</div>
+			<img src= "../img/MainLogo.png" alt= "Logo" class="center">
+			<div class="container">
+				<form id="myForm" class="searchBar" action="" onsubmit="return submitForm()">
+					<input id="mySearch" type="text" placeholder="Search.." class="center">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+function submitForm() {
+	let myQuery = document.getElementById('mySearch').value;
+	$.get('../../cgi-bin/NewEggs.py?search='+myQuery, function() {
+		window.open('../../client/html/Eggs.html','_self')
+		return false
+	})
+	return false
+}
+//var myQuery = document.getElementById("mySearch").value;
+</script>
